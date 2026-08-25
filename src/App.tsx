@@ -1,11 +1,18 @@
 import react from 'react';
+import Login from './auth/login/login';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
 	return (
-		<>
-			<h1 className='text-3xl font-bold underline text-blue-500'>Hello world!</h1>
-		</>
+		<Routes>
+			<Route path='/login' element={<Login />} />
+			{/* <Route path='/signup' element={<Signup />} /> */}
+			{/* <Route path='/forgot-password' element={<ForgotPassword />} /> */}
+
+			<Route path='/' element={<Navigate to='/login' replace />} />
+		</Routes>
 	);
+
 }
 
 export default App;
